@@ -1,25 +1,18 @@
-import logo from './logo.svg';
+import React from 'react';
+import EmployeeState from './ContextAPI/employeeState';
+import EmployeeDataViewer from './DataViewer/dataViewer';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<EmployeeState>
+			{/* Now, the EmployeeState context is available for all components inside */}
+			<div className='App'>
+				<EmployeeDataViewer />
+				{/* Add other components that depend on employee data */}
+			</div>
+		</EmployeeState>
+	);
 }
 
 export default App;
